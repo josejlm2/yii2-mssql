@@ -15,11 +15,12 @@ FROM yiisoftware/yii2-php:7.1-apache-17.12.0
 
     # Get repository and install wget and vim                                                                           Step 2
 RUN apt-get update && apt-get install --no-install-recommends -y \
-        wget \
-        vim \
+        apt-transport-https \
+        gettext \
         git \
         unzip \
-        apt-transport-https
+        vim \
+        wget
 
 
 #-------------------------------------------------------------------
