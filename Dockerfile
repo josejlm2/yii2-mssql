@@ -22,6 +22,19 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         vim \
         wget
 
+    # Install xdebug 2.6.1                                                                                              Step 3
+RUN cd /tmp && \
+    git clone git://github.com/xdebug/xdebug.git && \
+    cd xdebug && \
+    git checkout 97cc937cfeec707663bd6b1aa8d38d7cc98dd5cc && \
+    phpize && \
+    ./configure --enable-xdebug && \
+    make && \
+    make install && \
+    rm -rf /tmp/xdebug
+
+    # Set Yii2 image's environment variable                                                                             Step 4
+ENV PHP_ENABLE_XDEBUG 1
 
 #-------------------------------------------------------------------
 # II. INSTALL DATABASE
@@ -53,20 +66,10 @@ RUN a2enmod rewrite
 
     # Update the PHP.ini file, enable <? ?> tags and quiet logging.                                                     Step 7,8,9,10
 RUN sed -i "s/short_open_tag=0/short_open_tag = On/" 	/usr/local/etc/php/conf.d/base.ini
-RUN sed -i "s/xdebug.default_enable=off/xdebug.default_enable=On/" 	/usr/local/etc/php/conf.d/base.ini
+COPY image-files/xdebug.ini /usr/local/etc/php/conf.d/
 RUN echo "\n error_reporting = E_ALL; \n" >> /usr/local/etc/php/conf.d/base.ini
 
 RUN cp /usr/local/etc/php/conf.d/base.ini /usr/local/etc/php/php.ini
 
-    # Install xdebug                                                                                                    Step 11
-RUN cd /tmp && \
-    git clone git://github.com/xdebug/xdebug.git && \
-    cd xdebug && \
-    git checkout 52adff7539109db592d07d3f6c325f6ee2a7669f && \
-    phpize && \
-    ./configure --enable-xdebug && \
-    make && \
-    make install && \
-    rm -rf /tmp/xdebug
 
 ###<!-- BASE PHP END -->###

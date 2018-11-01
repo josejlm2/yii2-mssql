@@ -19,10 +19,14 @@ Run `docker build <path to folder of Dockerfile location>`
 1. [apt-transport-https](http://manpages.ubuntu.com/manpages/bionic/man1/apt-transport-https.1.html)
 2. [gettext](http://manpages.ubuntu.com/manpages/xenial/en/man1/gettext.1.html)
 3. [git](http://manpages.ubuntu.com/manpages/xenial/en/man1/git.1.html)
-4. [unzip](http://manpages.ubuntu.com/manpages/xenial/en/man1/unzip.1.html)
-5. [vim](http://manpages.ubuntu.com/manpages/xenial/en/man1/vim.1.html)
-6. [wget](http://manpages.ubuntu.com/manpages/xenial/en/man1/wget.1.html)
-
+4. [tree](http://manpages.ubuntu.com/manpages/xenial/en/man1/tree.1.html)
+5. [unzip](http://manpages.ubuntu.com/manpages/xenial/en/man1/unzip.1.html)
+6. [vim](http://manpages.ubuntu.com/manpages/xenial/en/man1/vim.1.html) 
+7. [wget](http://manpages.ubuntu.com/manpages/xenial/en/man1/wget.1.html)
+8. [Xdebug 2.6.1](https://confluence.jetbrains.com/display/PhpStorm/Xdebug+Installation+Guide)
+> NOTE: Xdebug has been enabled by default and configured to call ip `xdebug.remote_host` on `9005` port 
+(not use standard port to avoid conflicts), so you have to configure your IDE to receive connections from that ip. 
+If you are using macOS, you can fill `xdebug.remote_host` with `host.docker.internal`, due to [a network limitation on mac](https://docs.docker.com/docker-for-mac/networking/#port-mapping).
 
 ### Structure 
 ```   
