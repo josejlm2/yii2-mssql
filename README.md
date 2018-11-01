@@ -5,7 +5,7 @@ This image is hosted on [DockerHub](https://hub.docker.com/r/tamuarchi/yii2-mssq
 environment with Microsoft's SQL drivers. 
 
 **BASE IMAGE:** [yiisoftware/yii2-php:7.1-apache-17.12.0](https://github.com/yiisoft/yii2-docker)  
-**LATEST VERSION:** 1.0.1
+**LATEST VERSION:** 1.1.0
 
 ### To Use
 
@@ -23,6 +23,8 @@ Run `docker build .`
 
  Tag | Description 
 --- | --- 
+Latest | Tag 1.1.0
+[1.1.0](https://github.com/architexas/yii2-mssql/releases/tag/1.1.0) | Added Xdebug, more default settings, and more documentation
 [1.0.1](https://github.com/architexas/yii2-mssql/releases/tag/1.0.1) | Added documentation on the image's structure
 [1.0.0](https://github.com/architexas/yii2-mssql/releases/tag/1.0.0) | First image: PHP with MSSQL drivers and some additional tools   
 

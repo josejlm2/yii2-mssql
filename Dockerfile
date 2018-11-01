@@ -1,5 +1,5 @@
 # Name: Yii2-mssql
-# Version: 1.0.1
+# Version: 1.1.0
 # Description: A php (yii2) image with mssql drivers and tools installed
 #
 #-------------------------------------------------------------------
