@@ -55,7 +55,13 @@ If you are using macOS, you can fill `xdebug.remote_host` with `host.docker.inte
 |-- sys
 |-- tmp
 | `-- pear
-|-- usr
+|-- usr    
+    |-- local
+        |-- etc
+            |-- php.ini (PHP Settings)    
+            |-- conf.d            
+                |-- xdebug.ini (Xdebug Settings)  
+                |-- base.ini (PHP Settings)      
 `-- var
     |-- backups
     |-- cache

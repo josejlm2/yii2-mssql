@@ -64,12 +64,11 @@ RUN pecl install sqlsrv \
     # enable Apache rewrite module                                                                                      Step 6
 RUN a2enmod rewrite
 
-    # Update the PHP.ini file, enable <? ?> tags and quiet logging.                                                     Step 7,8,9,10
-RUN sed -i "s/short_open_tag=0/short_open_tag = On/" 	/usr/local/etc/php/conf.d/base.ini
+    # copy new configuration settings                                                                                   Step 9 & 10
+COPY image-files/php.ini /usr/local/etc/php/
 COPY image-files/xdebug.ini /usr/local/etc/php/conf.d/
-RUN echo "\n error_reporting = E_ALL; \n" >> /usr/local/etc/php/conf.d/base.ini
 
-RUN cp /usr/local/etc/php/conf.d/base.ini /usr/local/etc/php/php.ini
-
+    # Update the PHP.ini file, enable <? ?> tags                                                                        Step 11
+RUN sed -i "s/short_open_tag=0/short_open_tag=1/" 	/usr/local/etc/php/conf.d/base.ini
 
 ###<!-- BASE PHP END -->###
