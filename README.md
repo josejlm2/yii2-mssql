@@ -1,17 +1,37 @@
-# yii2-mssql
-Base image hosted on [DockerHub](https://hub.docker.com/r/tamuarchi/yii2-mssql/) for Yii2 Framework environment with MSSQL database 
-
+# Yii2-mssql
+   
 ### Description
-BASE IMAGE: [yiisoftware/yii2-php:7.1-apache](https://github.com/yiisoft/yii2-docker)
+This image is hosted on [DockerHub](https://hub.docker.com/r/tamuarchi/yii2-mssql/). It contains a Yii2 Framework 
+environment with Microsoft's SQL drivers. 
+
+**BASE IMAGE:** [yiisoftware/yii2-php:7.1-apache-17.12.0](https://github.com/yiisoft/yii2-docker)  
+**LATEST VERSION:** 1.0.1
+
+### To Use
+
+Pull image from Docker Hub  
+`docker pull tamuarchi/yii2-mssql`
+
+Alternatively, use image in a docker-compose file.  
+`FROM tamuarchi/yii2-mssql:latest`
 
 ### Building 
-Run `docker build <path to folder of Dockerfile location>`
+Clone `git clone git@github.com:architexas/yii2-mssql.git`   
+Run `docker build .`
 
 ### Versions
+
+ Tag | Description 
+--- | --- 
+[1.0.1](https://github.com/architexas/yii2-mssql/releases/tag/1.0.1) | Added documentation on the image's structure
+[1.0.0](https://github.com/architexas/yii2-mssql/releases/tag/1.0.0) | First image: PHP with MSSQL drivers and some additional tools   
+
+
+### Included
 - [PHP 7.1.12](http://php.net/index.php#id2018-10-11-3)  
-- Apache 2.4  
-- Microsoft SQL Server 2017 (RTM-CU9-GDR) (KB4293805) - 14.0.3035.2 (X64) Developer Edition (64-bit)
-- Linux (Ubuntu 16.04.5 LTS)
+- Apache/2.4.10 (Debian) 
+- Microsoft SQL Server 2017 drivers
+- Linux Debian 
 
 
 
@@ -32,8 +52,8 @@ If you are using macOS, you can fill `xdebug.remote_host` with `host.docker.inte
 ```   
 ./
 |-- app
-| `-- APPLICATION CAN GO HERE
-|-- bin
+| `-- APPLICATION CAN GO HERE (Recommended for Basic Template Applications)
+|-- bin 
 |-- boot
 |-- dev
 |-- etc
@@ -75,7 +95,7 @@ If you are using macOS, you can fill `xdebug.remote_host` with `host.docker.inte
     |-- spool
     |-- tmp
     `-- www
-         `-- APPLICATION CAN GO HERE
+         `-- APPLICATION CAN GO HERE (Recommended for Advance Template Applications)
 ```
 
 ### Collaborators

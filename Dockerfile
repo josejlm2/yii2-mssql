@@ -1,19 +1,20 @@
-# a php (yii2) image with mssql-tools and Apache installed
+# Name: Yii2-mssql
+# Version: 1.0.1
+# Description: A php (yii2) image with mssql drivers and tools installed
 #
 #-------------------------------------------------------------------
 # I. BASE IMAGE
 #-------------------------------------------------------------------
 
-    # Using Yii2's official docker image as base
-    # Using tag version because lastest version has a bug that stops MSQL Driver from working                           Step 1
+    # Using Yii2's official docker image as base                                                                        Step 1
+    # Using tag version 7.1-apache-17.12.0 because version 7.1-apache uses Alpine, not Debian, which breaks MSSQL Drivers
 FROM yiisoftware/yii2-php:7.1-apache-17.12.0
 
-
 #-------------------------------------------------------------------
-# II. INSTALL REQUIRED TOOLS
+# II. INSTALL TOOLS
 #-------------------------------------------------------------------
 
-    # Get repository and install wget and vim                                                                           Step 2
+    # Get updates and install helping tools needed for setup                                                            Step 2
 RUN apt-get update && apt-get install --no-install-recommends -y \
         apt-transport-https \
         gettext \
@@ -38,10 +39,10 @@ RUN cd /tmp && \
 ENV PHP_ENABLE_XDEBUG 1
 
 #-------------------------------------------------------------------
-# II. INSTALL DATABASE
+# III. SET UP DATABASE DRIVERS
 #-------------------------------------------------------------------
 
-    # install ODBC:                                                                                                     Step 3
+    # install ODBC:                                                                                                     Step 5
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
     && curl https://packages.microsoft.com/config/debian/8/prod.list > /etc/apt/sources.list.d/mssql-release.list \
     && apt-get install -y locales \
@@ -49,20 +50,20 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
     && locale-gen \
     && apt-get update
 
-    # accept EULA terms and install mssql tools                                                                         Step 4
+    # accept EULA terms and install mssql tools                                                                         Step 6
 RUN ACCEPT_EULA=Y apt-get install -y msodbcsql unixodbc-dev mssql-tools
 
-    # install PHP PDO SQLSRV driver:                                                                                    Step 5
+    # install PHP PDO SQLSRV driver:                                                                                    Step 7
 RUN pecl install sqlsrv \
     && pecl install pdo_sqlsrv \
     && docker-php-ext-enable sqlsrv pdo_sqlsrv
 
 
 #-------------------------------------------------------------------
-# III. SETUP DEVELOPMENT SERVER SETTINGS
+# III. SETUP SERVER SETTINGS FOR DEVELOPMENT
 #-------------------------------------------------------------------
 
-    # enable Apache rewrite module                                                                                      Step 6
+    # enable Apache rewrite module                                                                                      Step 8
 RUN a2enmod rewrite
 
     # copy new configuration settings                                                                                   Step 9 & 10
