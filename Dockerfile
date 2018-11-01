@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         git \
         unzip \
         vim \
+        tree \
         wget
 
     # Install xdebug 2.6.1                                                                                              Step 3
