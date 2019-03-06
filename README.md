@@ -6,7 +6,7 @@ This image is hosted on [DockerHub](https://hub.docker.com/r/tamuarchi/yii2-mssq
 environment with Microsoft's SQL drivers.
 
 **BASE IMAGE:** [yiisoftware/yii2-php:7.1-apache-17.12.0](https://github.com/yiisoft/yii2-docker)  
-**LATEST VERSION:** 1.1.1
+**LATEST VERSION:** 1.1.2
 
 ### To Use
 
@@ -25,7 +25,8 @@ Run `docker build .`
 
 | Tag                                                                  | Description                                                      |
 | -------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| Latest                                                               | Tag 1.1.1                                                        |
+| Latest                                                               | Tag 1.1.2                                                        |
+| [1.1.2](https://github.com/architexas/yii2-mssql/releases/tag/1.1.2) | Removed idekey configuration to allow all IDEs to connect.       |
 | [1.1.1](https://github.com/architexas/yii2-mssql/releases/tag/1.1.1) | Changed XDebug port to 9000 and added a few more configurations. |
 | [1.1.0](https://github.com/architexas/yii2-mssql/releases/tag/1.1.0) | Added Xdebug, more default settings, and more documentation      |
 | [1.0.1](https://github.com/architexas/yii2-mssql/releases/tag/1.0.1) | Added documentation on the image's structure                     |
