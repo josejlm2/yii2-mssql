@@ -48,9 +48,9 @@ Run `docker build .`
 5. [unzip](http://manpages.ubuntu.com/manpages/xenial/en/man1/unzip.1.html)
 6. [vim](http://manpages.ubuntu.com/manpages/xenial/en/man1/vim.1.html)
 7. [wget](http://manpages.ubuntu.com/manpages/xenial/en/man1/wget.1.html)
-8. [Xdebug 2.6.1](https://confluence.jetbrains.com/display/PhpStorm/Xdebug+Installation+Guide)
-   > NOTE: Xdebug has been enabled by default and configured to call ip `xdebug.remote_host` on `9000` port
-   > If you are using macOS, you can fill `xdebug.remote_host` with `host.docker.internal`, due to [a network limitation on mac](https://docs.docker.com/docker-for-mac/networking/#port-mapping).
+8. [Xdebug 2.9.2](https://xdebug.org/docs/install)
+    > NOTE: Xdebug has been enabled by default and configured to call ip `host.docker.internal` on `9005` port in order
+    to avoid conflicts with other applications and to bypass [a network limitation on Mac OS](https://docs.docker.com/docker-for-mac/networking/#port-mapping).     
 
 ### Structure
 

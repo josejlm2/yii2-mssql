@@ -24,19 +24,12 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         tree \
         wget
 
-    # Install xdebug 2.6.1                                                                                              Step 3
-RUN cd /tmp && \
-    git clone git://github.com/xdebug/xdebug.git && \
-    cd xdebug && \
-    git checkout 97cc937cfeec707663bd6b1aa8d38d7cc98dd5cc && \
-    phpize && \
-    ./configure --enable-xdebug && \
-    make && \
-    make install && \
-    rm -rf /tmp/xdebug
+    # Install xdebug 2.9.2                                                                                              Step 3
+RUN pecl install xdebug
 
     # Set Yii2 image's environment variable                                                                             Step 4
 ENV PHP_ENABLE_XDEBUG 1
+
 
 #-------------------------------------------------------------------
 # III. SET UP DATABASE DRIVERS
