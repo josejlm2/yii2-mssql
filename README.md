@@ -5,8 +5,8 @@
 This image is hosted on [DockerHub](https://hub.docker.com/r/tamuarchi/yii2-mssql/). It contains a Yii2 Framework
 environment with Microsoft's SQL drivers.
 
-**BASE IMAGE:** [yiisoftware/yii2-php:7.1-apache-17.12.0](https://github.com/yiisoft/yii2-docker)  
-**LATEST VERSION:** 1.1.2
+**BASE IMAGE:** [yiisoftware/yii2-php:7.3-apache](https://github.com/yiisoft/yii2-docker)  
+**LATEST VERSION:** 2.0.0
 
 ### To Use
 
@@ -34,10 +34,10 @@ Run `docker build .`
 
 ### Included
 
-- [PHP 7.1.12](http://php.net/index.php#id2018-10-11-3)
-- Apache/2.4.10 (Debian)
+- [PHP 7.3.12](https://www.php.net/ChangeLog-7.php#7.3.12)
+- Apache/[2.4.38](http://www.apache.org/dist/httpd/CHANGES_2.4.38) (Debian) - [Vulnerabilities List](https://httpd.apache.org/security/vulnerabilities_24.html)
 - Microsoft SQL Server 2017 drivers
-- Linux Debian
+- [Linux Debian 10.2](https://www.debian.org/News/2019/20191116)
 
 ### Tools Installed
 

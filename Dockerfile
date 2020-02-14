@@ -7,8 +7,8 @@
 #-------------------------------------------------------------------
 
     # Using Yii2's official docker image as base                                                                        Step 1
-    # Using tag version 7.1-apache-17.12.0 because version 7.1-apache uses Alpine, not Debian, which breaks MSSQL Drivers
-FROM yiisoftware/yii2-php:7.1-apache-17.12.0
+FROM yiisoftware/yii2-php:7.3-apache
+
 
 #-------------------------------------------------------------------
 # II. INSTALL TOOLS
