@@ -37,14 +37,14 @@ ENV PHP_ENABLE_XDEBUG 1
 
     # install ODBC:                                                                                                     Step 5
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
-    && curl https://packages.microsoft.com/config/debian/8/prod.list > /etc/apt/sources.list.d/mssql-release.list \
+    && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
     && apt-get install -y locales \
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
     && locale-gen \
     && apt-get update
 
     # accept EULA terms and install mssql tools                                                                         Step 6
-RUN ACCEPT_EULA=Y apt-get install -y msodbcsql unixodbc-dev mssql-tools
+RUN ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev mssql-tools
 
     # install PHP PDO SQLSRV driver:                                                                                    Step 7
 RUN pecl install sqlsrv \

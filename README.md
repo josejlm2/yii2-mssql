@@ -36,7 +36,7 @@ Run `docker build .`
 
 - [PHP 7.3.12](https://www.php.net/ChangeLog-7.php#7.3.12)
 - Apache/[2.4.38](http://www.apache.org/dist/httpd/CHANGES_2.4.38) (Debian) - [Vulnerabilities List](https://httpd.apache.org/security/vulnerabilities_24.html)
-- Microsoft SQL Server 2017 drivers
+- [Microsoft ODBC Driver 17 for SQL Server](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15)
 - [Linux Debian 10.2](https://www.debian.org/News/2019/20191116)
 
 ### Tools Installed
