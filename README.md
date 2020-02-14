@@ -2,8 +2,8 @@
 
 ### Description
 
-This image is hosted on [DockerHub](https://hub.docker.com/r/tamuarchi/yii2-mssql/). It contains a Yii2 Framework
-environment with Microsoft's SQL drivers.
+This image is hosted on [DockerHub](https://hub.docker.com/r/tamuarchi/yii2-mssql/). 
+It contains a Yii2 Framework environment with Microsoft's SQL drivers along with an Apache server.
 
 **BASE IMAGE:** [yiisoftware/yii2-php:7.3-apache](https://github.com/yiisoft/yii2-docker)  
 **LATEST VERSION:** 2.0.0
@@ -18,19 +18,23 @@ Alternatively, use image in a docker-compose file.
 
 ### Building
 
-Clone `git clone git@github.com:architexas/yii2-mssql.git`  
-Run `docker build .`
+Clone the repo   
+`git clone git@github.com:architexas/yii2-mssql.git`  
+  
+Build the image    
+`docker build .`   
 
 ### Versions
 
-| Tag                                                                  | Description                                                      |
-| -------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| Latest                                                               | Tag 1.1.2                                                        |
-| [1.1.2](https://github.com/architexas/yii2-mssql/releases/tag/1.1.2) | Removed idekey configuration to allow all IDEs to connect.       |
-| [1.1.1](https://github.com/architexas/yii2-mssql/releases/tag/1.1.1) | Changed XDebug port to 9000 and added a few more configurations. |
-| [1.1.0](https://github.com/architexas/yii2-mssql/releases/tag/1.1.0) | Added Xdebug, more default settings, and more documentation      |
-| [1.0.1](https://github.com/architexas/yii2-mssql/releases/tag/1.0.1) | Added documentation on the image's structure                     |
-| [1.0.0](https://github.com/architexas/yii2-mssql/releases/tag/1.0.0) | First image: PHP with MSSQL drivers and some additional tools    |
+| Tag                                                                  | Description                                                                |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Latest                                                               | Tag 2.0.0                                                                  |
+| [2.0.0](https://github.com/architexas/yii2-mssql/releases/tag/2.0.0) | Upgraded PHP, Debian, XDebug, Apache, MSSQL drivers and other dependencies |
+| [1.1.2](https://github.com/architexas/yii2-mssql/releases/tag/1.1.2) | Removed idekey configuration to allow all IDEs to connect.                 |
+| [1.1.1](https://github.com/architexas/yii2-mssql/releases/tag/1.1.1) | Changed XDebug port to 9000 and added a few more configurations.           |
+| [1.1.0](https://github.com/architexas/yii2-mssql/releases/tag/1.1.0) | Added Xdebug, more default settings, and more documentation                |
+| [1.0.1](https://github.com/architexas/yii2-mssql/releases/tag/1.0.1) | Added documentation on the image's structure                               |
+| [1.0.0](https://github.com/architexas/yii2-mssql/releases/tag/1.0.0) | First image: PHP with MSSQL drivers and some additional tools              |
 
 ### Included
 
@@ -53,6 +57,8 @@ Run `docker build .`
     to avoid conflicts with other applications and to bypass [a network limitation on Mac OS](https://docs.docker.com/docker-for-mac/networking/#port-mapping).     
 
 ### Structure
+
+A quick way to see the application structure is to run `tree -L 3 --filelimit 20` in the root directory.
 
 ```
 ./
@@ -105,6 +111,6 @@ Run `docker build .`
 
 ### Collaborators
 
-Cory Thompson ([@cthompson527](https://github.com/cthompson527))  
-Raul Jimenez  
-Jose Manriquez ([@josejlm2](https://github.com/josejlm2))
+Jose Manriquez ([@josejlm2](https://github.com/josejlm2))  
+Cory Thompson  ([@cthompson527](https://github.com/cthompson527))    
+Raul Jimenez   ([@rjimenezhsc](https://github.com/rjimenezhsc)) 
