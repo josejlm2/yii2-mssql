@@ -63,7 +63,7 @@ RUN a2enmod rewrite
 COPY image-files/php.ini /usr/local/etc/php/
 COPY image-files/xdebug.ini /usr/local/etc/php/conf.d/
 
-    # Update the PHP.ini file, enable <? ?> tags                                                                        Step 11
+    # Update the PHP.ini file to enable short tags since php.ini settings are overwritten in Debian distributions       Step 11
 RUN sed -i "s/short_open_tag=0/short_open_tag=1/" 	/usr/local/etc/php/conf.d/base.ini
 
 ###<!-- BASE PHP END -->###
